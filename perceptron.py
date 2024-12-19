@@ -1,6 +1,6 @@
 import numpy as np
 from data import load_data
-from graph import plot_initial_data
+from graph import plot_initial_data, plot_final_data
 
 # Load data
 A_points, B_points = load_data()
@@ -55,4 +55,6 @@ print("Final weights:", W)
 print("Number of iterations:", epoch + 1)
 
 # Plot the final decision boundary
+plot_final_data(A_points, B_points, W)
+
 
