@@ -1,6 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-
 # Load data
 def load_data():
     print("Enter the coordinates of the A points in format x1 y1, x2 y2, ...")
@@ -27,8 +24,6 @@ def parse_coordinates(coordinates):
         y = int(y)
         points.append([x, y])
     return points
-
-load_data()
 
 # 2 6, 4 4, 6 3
 # 4 10, 7 10, 9 8
