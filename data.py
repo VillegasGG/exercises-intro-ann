@@ -17,6 +17,8 @@ def load_data():
     print("A:", A_points)
     print("B:", B_points)
 
+    return A_points, B_points
+
 def parse_coordinates(coordinates):
     points = []
     for coordinate in coordinates:
