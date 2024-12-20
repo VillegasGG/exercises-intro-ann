@@ -5,7 +5,7 @@ from graph import plot_initial_data, plot_final_data, plot_final_data_with_new_p
 # Compute the perceptron output
 def perceptron_output(x, W):
     z = np.dot(x, W)
-    return 1 if z > 0 else 0
+    return 1 if z > 0 else -1
 
 # Train the perceptron
 def train_perceptron(data, labels, weights, learning_rate):
@@ -21,8 +21,9 @@ def train_perceptron(data, labels, weights, learning_rate):
             
             if y != y_hat:
                 weights += learning_rate * (y - y_hat) * x
-                print(f"----------")
+                print("*" * 10)
                 print(f"Updating weights: {weights} + {learning_rate * (y - y_hat) * x}")
+                print("*" * 10)
                 misclassified = True
                 
         # Print epoch results
@@ -30,8 +31,6 @@ def train_perceptron(data, labels, weights, learning_rate):
         print("Epoch:", epochs)
         print("Weights:", weights)
         print("Misclassified:", misclassified)
-        print("Accuracy:", 1 - np.mean(misclassified))
-        print("Learning rate:", learning_rate)
         print()
         print("----------")
 
@@ -53,7 +52,7 @@ B = np.array(B_points)
 
 # Create data and labels
 data = np.concatenate((A, B))
-labels = np.array([1] * len(A) + [0] * len(B))
+labels = np.array([1] * len(A) + [-1] * len(B))
 
 # print the data and labels
 print("Data:", data)
@@ -72,7 +71,7 @@ plot_initial_data(A_points, B_points)
 plot_final_data(A_points, B_points, weights, "initial_data")
 
 # Train the perceptron
-learning_rate = 0.30
+learning_rate = 0.10
 weights = train_perceptron(data, labels, weights, learning_rate)
 
 # Plot the final decision boundary
