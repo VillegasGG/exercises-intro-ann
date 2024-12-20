@@ -55,6 +55,10 @@ B = np.array(B_points)
 data = np.concatenate((A, B))
 labels = np.array([1] * len(A) + [0] * len(B))
 
+# print the data and labels
+print("Data:", data)
+print("Labels:", labels)
+
 # Add bias to the data
 data = np.c_[data, np.ones(data.shape[0])]
 
@@ -68,7 +72,8 @@ plot_initial_data(A_points, B_points)
 plot_final_data(A_points, B_points, weights, "initial_data")
 
 # Train the perceptron
-weights = train_perceptron(data, labels, weights, 0.4)
+learning_rate = 0.4
+weights = train_perceptron(data, labels, weights, learning_rate)
 
 # Plot the final decision boundary
 plot_final_data(A_points, B_points, weights, "final_data")
