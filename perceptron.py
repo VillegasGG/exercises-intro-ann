@@ -72,7 +72,7 @@ plot_initial_data(A_points, B_points)
 plot_final_data(A_points, B_points, weights, "initial_data")
 
 # Train the perceptron
-learning_rate = 0.4
+learning_rate = 0.30
 weights = train_perceptron(data, labels, weights, learning_rate)
 
 # Plot the final decision boundary
