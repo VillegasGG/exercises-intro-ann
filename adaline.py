@@ -71,3 +71,16 @@ weights = train_adaline(data, labels, weights, alpha)
 # Plot the final decision boundary
 plot_final_data(A_points, B_points, weights, "final_data_adaline")
 
+# Try new point
+new_point = np.array([5, 5])
+new_point = np.append(new_point, 1)
+print("New point:", new_point)
+print("Classification:", adaline_output(new_point, weights))
+plot_final_data_with_new_points(A_points, B_points, weights, [new_point], "final_data_with_new_point_adaline1")
+
+new_point = np.array([6, 8])
+new_point = np.append(new_point, 1)
+print("New point:", new_point)
+print("Classification:", adaline_output(new_point, weights))
+plot_final_data_with_new_points(A_points, B_points, weights, [new_point], "final_data_with_new_point_adaline2")
+
